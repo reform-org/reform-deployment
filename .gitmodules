@@ -1,0 +1,6 @@
+[submodule "reform"]
+	path = reform
+	url = git@github.com:reform-org/reform.git
+[submodule "reform_discovery"]
+	path = reform_discovery
+	url = git@github.com:reform-org/reform_discovery.git
