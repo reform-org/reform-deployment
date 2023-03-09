@@ -15,9 +15,9 @@ export DOCKER_BUILDKIT=0
 docker-compose up --build
 
 docker-compose exec reform /bin/bash
-apt update && apt install -y nginx git sudo curl
+apt update && apt install -y nginx git sudo curl tmux nano
 systemctl start nginx
-useradd --create-home -G sudo reform
+useradd --create-home --shell /bin/bash -G sudo reform
 passwd reform
 exit
 
@@ -26,8 +26,23 @@ cd ~
 git clone https://github.com/reform-org/reform/
 git clone https://github.com/reform-org/reform_discovery/
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-. .profile
+. ~/.profile
 nvm install --lts
+
+apt-get install default-jre
+curl -fLo coursier https://github.com/coursier/launchers/raw/master/coursier && chmod +x coursier && ./coursier setup
+
+cd reform
+npm ci
+sbt
+fastLinkJS
+webappJVM/run
+cd ..
+
+cd reform_discovery
+cp .env.demo .env
+nano .env
+npm run start
 
 
 ```
