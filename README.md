@@ -16,9 +16,10 @@ docker-compose exec --user reform reform /bin/bash
 
 cd reform
 npm ci
-sbt
-fastLinkJS
-webappJVM/run
+. ~/.profile
+sbt fastLinkJS
+npm run build
+VITE_ALWAYS_ONLINE_PEER_LISTEN_PORT=1443 sbt webappJVM/run
 cd ..
 
 cd reform_discovery
