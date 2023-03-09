@@ -12,3 +12,7 @@ services:
       - ./reform:/home/reform/reform
       - ./reform_discovery:/home/reform/reform_discovery
       - ./reform.conf:/etc/nginx/sites-enabled/reform.conf
+    deploy:
+      resources:
+        limits:
+          pids: 10000

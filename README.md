@@ -19,7 +19,8 @@ npm ci
 . ~/.profile
 sbt fastLinkJS
 npm run build
-VITE_ALWAYS_ONLINE_PEER_LISTEN_PORT=1443 sbt webappJVM/run
+export $(cat .env | xargs)
+sbt webappJVM/run
 cd ..
 
 cd reform_discovery
