@@ -1,10 +1,12 @@
 services:
   reform:
+    #image: nginx
     build: .
-    command: /lib/systemd/systemd
+    stdin_open: true
+    tty: true
     ports:
-      - 443:443
-      - 80:80
+      - 8443:443
+      - 8080:80
     configs:
       - nginx-config
 
