@@ -13,11 +13,14 @@ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 export DOCKER_BUILDKIT=0
 
 docker-compose up --build
-docker-compose exec -i reform /bin/bash
+
+docker-compose exec reform /bin/bash
 apt update && apt install -y nginx git sudo curl
 systemctl start nginx
-useradd -G sudo reform
+useradd --create-home -G sudo reform
 passwd reform
+exit
+
 docker-compose exec --user reform reform /bin/bash
 cd ~
 git clone https://github.com/reform-org/reform/

@@ -1,15 +1,10 @@
 services:
   reform:
-    #image: nginx
     build: .
     stdin_open: true
     tty: true
     ports:
       - 8443:443
       - 8080:80
-    configs:
-      - nginx-config
-
-configs:
-  nginx-config:
-    file: ./reform.conf
+    volumes:
+      - ./reform.conf:/etc/nginx/sites-enabled/reform.conf
