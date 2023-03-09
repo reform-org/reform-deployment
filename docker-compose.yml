@@ -1,6 +1,8 @@
 services:
   reform:
     build: .
+    user: root
+    command: /lib/systemd/systemd
     stdin_open: true
     tty: true
     ports:

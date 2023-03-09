@@ -9,6 +9,3 @@ RUN echo "reform:reform"|chpasswd
 USER reform
 WORKDIR /home/reform
 RUN curl -fLo coursier https://github.com/coursier/launchers/raw/master/coursier && chmod +x coursier && ./coursier setup --yes
-USER root
-CMD [ "/lib/systemd/systemd" ]
-USER reform
