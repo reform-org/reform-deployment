@@ -1,3 +1,5 @@
+This should be done on a native debian host and is just done this way to allow testing this setup.
+
 **this requires podman (rootless preferred)**
 
 TODO user in docker
@@ -14,6 +16,9 @@ docker-compose up --build
 
 docker-compose exec --user reform reform /bin/bash
 
+sudo chown -R reform reform
+sudo chown -R reform reform_discovery
+
 cd reform
 npm ci
 . ~/.profile
@@ -24,6 +29,7 @@ sbt webappJVM/run
 cd ..
 
 cd reform_discovery
+npm ci
 cp .env.demo .env
 nano .env
 npm run start
