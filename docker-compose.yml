@@ -1,0 +1,13 @@
+services:
+  reform:
+    build: .
+    command: /lib/systemd/systemd
+    ports:
+      - 443:443
+      - 80:80
+    configs:
+      - nginx-config
+
+configs:
+  nginx-config:
+    file: ./reform.conf
