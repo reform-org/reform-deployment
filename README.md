@@ -36,7 +36,7 @@ npm run start
 cd ..
 
 
-turnserver
+turnserver --static-auth-secret=${TURN_SECRET}
 # tls certs turn_server_cert.pem turn_server_pkey.pem
 # pid file /var/tmp/turnserver.pid
 # sqlite path /var/lib/turn/turndb
