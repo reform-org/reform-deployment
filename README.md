@@ -33,6 +33,12 @@ npm ci
 cp .env.demo .env
 nano .env
 npm run start
+cd ..
 
+
+turnserver
+# tls certs turn_server_cert.pem turn_server_pkey.pem
+# pid file /var/tmp/turnserver.pid
+# sqlite path /var/lib/turn/turndb
 
 ```

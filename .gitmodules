@@ -4,3 +4,6 @@
 [submodule "reform_discovery"]
 	path = reform_discovery
 	url = git@github.com:reform-org/reform_discovery.git
+[submodule "reform-discovery-ts"]
+	path = reform-discovery-ts
+	url = git@github.com:reform-org/reform-discovery-ts.git
